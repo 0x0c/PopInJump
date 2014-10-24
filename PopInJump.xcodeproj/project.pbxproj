@@ -14,6 +14,8 @@
 		E99C0EA619FAF9670014F364 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E99C0EA519FAF9670014F364 /* Images.xcassets */; };
 		E99C0EA919FAF9670014F364 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = E99C0EA719FAF9670014F364 /* LaunchScreen.xib */; };
 		E99C0EB519FAF9680014F364 /* PopInJumpTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E99C0EB419FAF9680014F364 /* PopInJumpTests.m */; };
+		E99C0EC319FAF98E0014F364 /* PopInJump.m in Sources */ = {isa = PBXBuildFile; fileRef = E99C0EC219FAF98E0014F364 /* PopInJump.m */; };
+		E99C0EC519FAF9B20014F364 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E99C0EC419FAF9B20014F364 /* JavaScriptCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,9 @@
 		E99C0EAE19FAF9680014F364 /* PopInJumpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PopInJumpTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E99C0EB319FAF9680014F364 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E99C0EB419FAF9680014F364 /* PopInJumpTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PopInJumpTests.m; sourceTree = "<group>"; };
+		E99C0EC119FAF98E0014F364 /* PopInJump.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PopInJump.h; sourceTree = "<group>"; };
+		E99C0EC219FAF98E0014F364 /* PopInJump.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PopInJump.m; sourceTree = "<group>"; };
+		E99C0EC419FAF9B20014F364 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,6 +52,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99C0EC519FAF9B20014F364 /* JavaScriptCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +69,7 @@
 		E99C0E8C19FAF9670014F364 = {
 			isa = PBXGroup;
 			children = (
+				E99C0EC419FAF9B20014F364 /* JavaScriptCore.framework */,
 				E99C0E9719FAF9670014F364 /* PopInJump */,
 				E99C0EB119FAF9680014F364 /* PopInJumpTests */,
 				E99C0E9619FAF9670014F364 /* Products */,
@@ -81,6 +88,7 @@
 		E99C0E9719FAF9670014F364 /* PopInJump */ = {
 			isa = PBXGroup;
 			children = (
+				E99C0EBF19FAF9860014F364 /* Library */,
 				E99C0E9C19FAF9670014F364 /* AppDelegate.h */,
 				E99C0E9D19FAF9670014F364 /* AppDelegate.m */,
 				E99C0E9F19FAF9670014F364 /* ViewController.h */,
@@ -117,6 +125,23 @@
 				E99C0EB319FAF9680014F364 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E99C0EBF19FAF9860014F364 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				E99C0EC019FAF9860014F364 /* PopInJump */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		E99C0EC019FAF9860014F364 /* PopInJump */ = {
+			isa = PBXGroup;
+			children = (
+				E99C0EC119FAF98E0014F364 /* PopInJump.h */,
+				E99C0EC219FAF98E0014F364 /* PopInJump.m */,
+			);
+			path = PopInJump;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -219,6 +244,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99C0EC319FAF98E0014F364 /* PopInJump.m in Sources */,
 				E99C0EA119FAF9670014F364 /* ViewController.m in Sources */,
 				E99C0E9E19FAF9670014F364 /* AppDelegate.m in Sources */,
 				E99C0E9B19FAF9670014F364 /* main.m in Sources */,
