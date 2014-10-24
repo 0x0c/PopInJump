@@ -26,24 +26,29 @@
 
 #pragma mark -
 
-- (void)viewControllerMethod
+- (void)pop
 {
-	NSLog(@"viewControllerMethod");
+	NSLog(@"ぽっ");
 }
 
 - (IBAction)eval:(id)sender
 {
 	[PopInJump setDebugMode:YES];
-	[PopInJump addBridgeHandlerWithTarget:self selector:@selector(viewControllerMethod)];
-	[PopInJump addBridgeHandlerWithKey:@"viewControllerHandler" hendler:^(JSValue *value) {
-		NSLog(@"viewControllerHandler");
+	[PopInJump addBridgeHandlerWithTarget:self selector:@selector(pop)];
+	[PopInJump addBridgeHandlerWithKey:@"in" hendler:^(JSValue *value) {
+		NSLog(@"ぴん");
+	}];
+	[PopInJump addBridgeHandlerWithKey:@"jump" hendler:^(JSValue *value) {
+		NSLog(@"ジャンプ♪");
 	}];
 	
-	self.title = @"PopInJump title";
+	self.title = @"こころぴょんぴょん";
 	[PopInJump setBridgeVariableWithKey:@"viewControllerTitle" variable:self.title];
 	[PopInJump evaluateScript:@"\
-	 PopInJumpBridgeHandler.viewControllerHandler();\
-	 PopInJumpBridgeHandler.viewControllerMethod();\
+	 PopInJump.log('せーのっ！で');\
+	 PopInJumpBridgeHandler.pop();\
+	 PopInJumpBridgeHandler.in();\
+	 PopInJumpBridgeHandler.jump();\
 	 PopInJump.rog();// exception will be thrown\
 	 PopInJump.log(PopInJumpBridgeStore.viewControllerTitle);\
 	 "];
@@ -51,7 +56,7 @@
 
 - (IBAction)updateTitle:(id)sender
 {
-	[PopInJump evaluateScript:@"PopInJumpBridgeStore.viewControllerTitle = 'new title';"];
+	[PopInJump evaluateScript:@"PopInJumpBridgeStore.viewControllerTitle = 'ごちうさは終わったんだよ';"];
 	self.title = [[PopInJump getBridgeVariableWithKey:@"viewControllerTitle"] toString];
 }
 
